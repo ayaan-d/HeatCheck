@@ -25,4 +25,10 @@ impl Logger {
         writeln!(file, "{}", message).expect("Failed to write to log file");
         println!("{}", message); // Print to console as well
     }
+
+    pub async fn log_summary(&self, summary: &str) {
+        let mut file = self.file.lock().await;
+        writeln!(file, "Summary Report:\n{}", summary).expect("Failed to write summary to log file");
+        println!("Summary Report:\n{}", summary);
+    }
 }
