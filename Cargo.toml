@@ -1,0 +1,11 @@
+[package]
+name = "cpu_temp_monitor"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+sysinfo = "0.23"    # For system information
+chrono = "0.4"      # For date and time
+tokio = { version = "1", features = ["full"] }  # For async and multi-threading
+serde = { version = "1.0", features = ["derive"] }  # For serialization
+toml = "0.5"        # For reading TOML files

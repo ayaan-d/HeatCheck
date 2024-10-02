@@ -1,12 +1,13 @@
 // src/config.rs
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize};
 use std::fs;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Deserialize)]
 pub struct Config {
     pub log_file: String,
     pub temperature_threshold: f32,
     pub check_interval: u64,
+    pub summary_interval: u64,
 }
 
 impl Config {

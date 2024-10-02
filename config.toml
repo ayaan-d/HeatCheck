@@ -1,0 +1,11 @@
+# Log file path for system metrics and alerts
+log_file = "temperature_log.txt"
+
+# Temperature threshold (in Celsius) for alerts
+temperature_threshold = 80.0
+
+# Interval (in seconds) for checking system metrics
+check_interval = 2
+
+# Interval (in seconds) for summary reports
+summary_interval = 3600  # 1 hour
