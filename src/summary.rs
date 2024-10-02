@@ -5,6 +5,8 @@ pub struct Summary {
     pub cpu_temps: Vec<f32>,
     pub memory_used: u64,
     pub disk_usage: HashMap<String, (u64, u64)>, // (used, total)
+    pub log_interval: u64, // e.g., log every 3600 seconds
+    pub last_logged: u64,   // timestamp of the last log
 }
 
 impl Summary {
@@ -40,5 +42,9 @@ impl Summary {
         }
 
         report
+    }
+
+    pub fn should_log(&self, current_time: u64) -> bool {
+        current_time - self.last_logged >= self.log_interval
     }
 }

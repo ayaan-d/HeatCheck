@@ -4,6 +4,7 @@ use chrono::Local;
 use tokio::sync::Mutex;
 use std::sync::Arc;
 
+#[derive(Clone)]
 pub struct Logger {
     file: Arc<Mutex<std::fs::File>>,
 }
